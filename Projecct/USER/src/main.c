@@ -38,7 +38,7 @@ MT9V032接线定义：
 *********************************************/  
 #include "headfile.h"
 
-static double adjust_angle=-90;
+static double adjust_angle=-60;
 
 int main(void)
 {
@@ -46,7 +46,9 @@ int main(void)
   
     uint8 gy273buff[8]={0};
     double angle[5]={0};
-    double image_angle;
+    double air_angle[3];
+    double *image_angle = &air_angle[0];
+    double *hmc_air_angle = &air_angle[1];
     uint8 nrf_buff[32]={0};
     int i,j;
      get_clk();//上电后必须运行一次这个函数，获取各个频率信息，便于后面各个模块的参数设置
@@ -58,7 +60,7 @@ int main(void)
     NRF_Dev_Init();
     Gy273Init();
     uart_putchar(uart0,'a');
-    //ftm_pwm_init(ftm1,ftm_ch1,100,1000);//a13
+    ftm_pwm_init(ftm1,ftm_ch1,100,1000);//a13
     //ftm_pwm_init(ftm2,ftm_ch0,100,2290);//B18
     //ftm_pwm_init(ftm2,ftm_ch1,80000,180);//B19
     
@@ -66,13 +68,13 @@ int main(void)
 	{     
           while(NRF_Rece_Packet(nrf_buff)==0);
          // uart_putbuff(uart0,nrf_buff+1,1);
-          if(nrf_buff[0] == 0x09)
+          if(nrf_buff[0] == 0x16)
           {
-            //get_nrf_data(nrf_buff,&image_angle);//图像角度
-           // Read_HMC5883(gy273buff,angle); //地磁计角度
+            get_nrf_data(nrf_buff,air_angle);//图像角度以及飞机上的hmc角度
+            Read_HMC5883(gy273buff,angle); //地磁计角度
             //printf("image_angle:%f hmc_angle:%f  err_angle:%f \n",image_angle,angle[0],image_angle-angle[0]-55.828147);
            // printf("地磁角：angle0:    %f \n",angle[0]);
-            //ser_con(&image_angle,&angle[0],&adjust_angle);
+            ser_con(image_angle,&angle[0],hmc_air_angle,&adjust_angle);
           }
           //Read_HMC5883(gy273buff,angle);      
           //printf("angle0:    %f \n",angle[0]);

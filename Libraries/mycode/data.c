@@ -281,7 +281,7 @@ void get_nrf_data(uint8 *buff,double* data)
   int i;
   *data = 0;
   uint8 *p = (uint8*)data;
-  for(i = 0;i<8;i++)
+  for(i = 0;i<16;i++)
   {
     p[i] = buff[i+1];
   }

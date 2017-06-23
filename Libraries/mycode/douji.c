@@ -4,8 +4,8 @@
 
 #define LOW_PWM 2080
 #define HIGH_PWM 2520
-
-
+#define DEBUG
+//#define DSPDA
 struct pid
 {
   double P;
@@ -18,10 +18,19 @@ struct pid douji_pid={
   .P = 6,
   .D = 1
 };
- 
-uint8 ser_con(double *image_ang,double *hmc_ang,double *err_adjust)
+ /*
+  image_ang----飞机上的图像角
+  hmc_ang-----飞机上的hmc角
+  air_hmc-----飞机上的hmc角
+
+*/
+uint8 ser_con(double *image_ang,double *hmc_ang,double *air_hmc,double *err_adjust)
 {
   uint32 pwm_out;
+#ifdef DEBUG
+  
+  printf("before adjust air_img:%f  air_hmc:%f car_hmc:%f \n",*image_ang,*air_hmc,*hmc_ang);
+#endif
   //*image_ang = *image_ang - *err_adjust;
   angle_adjust(hmc_ang,err_adjust);
   //err = (*image_ang - *hmc_ang + 180)%180;
@@ -36,8 +45,11 @@ uint8 ser_con(double *image_ang,double *hmc_ang,double *err_adjust)
   
   pwm_out = (uint32)douji_pid.out;
   pre_err = err;
-  printf("image_angle:%f hmc_angle:%f  err_angle:%f \n",*image_ang,*hmc_ang,err);
-  //限幅控制
+#ifdef DEBUG
+  
+  printf("after_adjust--image_angle:%f hmc_angle:%f  err_angle:%f \n",*image_ang,*hmc_ang,err);
+#endif
+//限幅控制
   if(pwm_out < LOW_PWM) {pwm_out = LOW_PWM;}
   if(pwm_out > HIGH_PWM){pwm_out = HIGH_PWM;}
   
@@ -49,7 +61,17 @@ uint8 ser_con(double *image_ang,double *hmc_ang,double *err_adjust)
 uint8 get_err_ang(double *angle1,double *angle2,double *result)
 {
   double angle = 0,bu_angle = 0;
+#ifdef DSPDA
+   float32_t ang1 = (float32_t)*angle1,\
+             ang2 = (float32_t)*angle2,\
+             ret;
+   arm_sub_f32(&ang1,&ang2,&ret,0);
+   *result = (double)ret;
+   
+#endif
+#ifndef DSPDA
   angle = *angle1 - *angle2;
+#endif 
   if(fabs(angle) > 180)
   {
     bu_angle = 360.0 - fabs(angle);

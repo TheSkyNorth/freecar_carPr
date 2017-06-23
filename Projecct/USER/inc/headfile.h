@@ -29,7 +29,7 @@
 #include "common.h"
 #include "misc.h"
 #include "stdio.h"
-
+#include "arm_math.h"
 //--------函数库--------
 #include "MK60DN10_gpio.h"
 #include "MK60DN10_systick.h"
