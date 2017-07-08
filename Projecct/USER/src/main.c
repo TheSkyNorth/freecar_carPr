@@ -38,7 +38,7 @@ MT9V032接线定义：
 *********************************************/  
 #include "headfile.h"
 
-static double adjust_angle=-60;
+static double adjust_angle=-112;
 
 int main(void)
 {
@@ -60,9 +60,9 @@ int main(void)
     NRF_Dev_Init();
     Gy273Init();
     uart_putchar(uart0,'a');
-    ftm_pwm_init(ftm1,ftm_ch1,100,1000);//a13
+    ftm_pwm_init(ftm1,ftm_ch1,100,1630);//a13
     //ftm_pwm_init(ftm2,ftm_ch0,100,2290);//B18
-    //ftm_pwm_init(ftm2,ftm_ch1,80000,180);//B19
+    
     
     for(;;)
 	{     
@@ -70,6 +70,7 @@ int main(void)
          // uart_putbuff(uart0,nrf_buff+1,1);
           if(nrf_buff[0] == 0x16)
           {
+            
             get_nrf_data(nrf_buff,air_angle);//图像角度以及飞机上的hmc角度
             Read_HMC5883(gy273buff,angle); //地磁计角度
             //printf("image_angle:%f hmc_angle:%f  err_angle:%f \n",image_angle,angle[0],image_angle-angle[0]-55.828147);

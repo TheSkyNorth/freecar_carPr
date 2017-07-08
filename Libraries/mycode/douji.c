@@ -2,8 +2,9 @@
 #include "headfile.h"
 #include "math.h"
 
-#define LOW_PWM 2080
-#define HIGH_PWM 2520
+#define LOW_PWM 1430
+#define HIGH_PWM 1790
+#define MID_PWM 1630
 #define DEBUG
 //#define DSPDA
 struct pid
@@ -40,7 +41,7 @@ uint8 ser_con(double *image_ang,double *hmc_ang,double *air_hmc,double *err_adju
 //    err = 0- err;
 //  }
   
-  douji_pid.out = 2290 + douji_pid.P*err+ \
+  douji_pid.out = MID_PWM + douji_pid.P*err+ \
     douji_pid.D * (err - pre_err);
   
   pwm_out = (uint32)douji_pid.out;

@@ -1297,6 +1297,12 @@
         <file>
             <name>$PROJ_DIR$\..\..\..\Libraries\mycode\gy273.h</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Libraries\mycode\speed.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Libraries\mycode\speed.h</name>
+        </file>
     </group>
     <group>
         <name>seekfree</name>

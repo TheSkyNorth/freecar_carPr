@@ -66,4 +66,5 @@
 #include "gy273.h"
 #include "data.h"
 #include "beep.h"
+#include "speed.h"
 #endif
