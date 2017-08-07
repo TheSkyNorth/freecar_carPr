@@ -41,7 +41,6 @@ typedef enum
 
 #define     PIT_FlAG_CLR(PITn)          PIT->CHANNEL[PITn].TFLG |= PIT_TFLG_TIF_MASK        //清中断标志（写1 清空标志位）
 
-
 void pit_init(PITn pitn, uint32 cnt);
 void pit_delay(PITn pitn, uint32 cnt);
 void pit_time_start(PITn pitn);

@@ -114,17 +114,17 @@ void camera_init(void)
     //DMA通道0初始化，PTE0触发源(默认上升沿)，源地址为C_IN_DATA(1)(PTC8-PTC15)，目的地址为：image，每次传输1Byte 传输完毕保持目的地址
     dma_portx2buff_init(DMA_CH0, (void *)&C_IN_DATA(1), (void *)image, C18, DMA_BYTE1, COL, DADDR_KEEPON);
     port_init(C18, ALT1 | DMA_FALLING | PULLDOWN);  			//PCLK  触发源设置
-	DMA_DIS(DMA_CH0);                                     		//禁用DMA通道
+    DMA_DIS(DMA_CH0);                                     		//禁用DMA通道
     DMA_IRQ_CLEAN(DMA_CH0);                               		//清除通道传输中断标志位
     DMA_IRQ_EN(DMA_CH0);                                  		//允许DMA通道中断
-	DMA_EN(DMA_CH0);  											//使能DMA
+    DMA_EN(DMA_CH0);  							//使能DMA
 	
 	disable_irq(PORTC_IRQn);                             		//关闭PTC的中断
     //port_init(C7, ALT1 | IRQ_FALLING | PULLDOWN);      			//行中断
     port_init(C6, ALT1 | IRQ_FALLING | PULLDOWN);        		//场中断，下降沿触发中断、下拉
     set_irq_priority(PORTC_IRQn,1);                             // 中断优先级
     enable_irq (PORTC_IRQn);
-	EnableInterrupts;
+    EnableInterrupts;
 }
 
 

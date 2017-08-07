@@ -12,7 +12,7 @@ int dir[][2]=
   {1,0},{-1,1},
   {0,1},{1,1}
 };
-Node head[200];
+Node head[10];
 uint8 tempimage[ROW][COL]; //用于处理数据 的临时数组
 uint8 binary_image[ROW][COL]; //二值化后的数组
 uint16 light_num; //亮点的数目
@@ -287,3 +287,17 @@ void get_nrf_data(uint8 *buff,double* data)
   }
 
 }
+
+void ger_nrf_point(uint8 *buff,Node *point)
+{
+  int i;
+  uint8 *p = (uint8 *)point;
+  
+  for(i = 0;i<12;i++)
+  {
+    p[i] = buff[i+17];
+  }
+
+
+}
+

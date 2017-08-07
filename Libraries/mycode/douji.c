@@ -5,12 +5,11 @@
 #define LOW_PWM 1430
 #define HIGH_PWM 1790
 #define MID_PWM 1630
-#define DEBUG
+//#define DEBUG
 //#define DSPDA
 struct pid
 {
   double P;
-  double I;
   double D;
   double out;
 };
@@ -41,16 +40,21 @@ uint8 ser_con(double *image_ang,double *hmc_ang,double *air_hmc,double *err_adju
 //    err = 0- err;
 //  }
   
-  douji_pid.out = MID_PWM + douji_pid.P*err+ \
+
+    douji_pid.out = MID_PWM + douji_pid.P*err+ \
     douji_pid.D * (err - pre_err);
+    
+    pwm_out = (uint32)douji_pid.out;  
   
-  pwm_out = (uint32)douji_pid.out;
+  
   pre_err = err;
 #ifdef DEBUG
   
   printf("after_adjust--image_angle:%f hmc_angle:%f  err_angle:%f \n",*image_ang,*hmc_ang,err);
 #endif
 //ÏÞ·ù¿ØÖÆ
+  
+  
   if(pwm_out < LOW_PWM) {pwm_out = LOW_PWM;}
   if(pwm_out > HIGH_PWM){pwm_out = HIGH_PWM;}
   
@@ -124,6 +128,15 @@ uint8 angle_adjust(double *angle,double *adjust_num)
 }
 
 
-
+void ca_dis(Node *pointa,Node *pointb,float *dis)
+{
+ // float dis=0;
+  
+  *dis = (pointa->x-pointb->x)*(pointa->x-pointb->x)+(pointa->y-pointb->y)*(pointa->y-pointb->y);
+#ifdef DEBUG  
+  printf("distancd: %f  \n",dis);
+#endif
+  //return dis;
+}
 
 

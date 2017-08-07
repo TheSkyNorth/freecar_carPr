@@ -1135,6 +1135,12 @@
     <group>
         <name>mycode</name>
         <file>
+            <name>$PROJ_DIR$\..\..\..\Libraries\mycode\ANO_DT.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Libraries\mycode\ANO_DT.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\Libraries\mycode\beep.c</name>
         </file>
         <file>
@@ -1159,10 +1165,22 @@
             <name>$PROJ_DIR$\..\..\..\Libraries\mycode\gy273.h</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\..\Libraries\mycode\road.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Libraries\mycode\road.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\Libraries\mycode\speed.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\Libraries\mycode\speed.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Libraries\mycode\ultrasonic.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Libraries\mycode\ultrasonic.h</name>
         </file>
     </group>
     <group>

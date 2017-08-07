@@ -1,11 +1,5 @@
 ﻿G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\SeekFree_Kinetis.pbd
-G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\beep.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\common.pbi
-G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\data.pbi
-G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\douji.pbi
-G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\gy273.pbi
-G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\isr.pbi
-G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\main.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\misc.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\MK60DN10_adc.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\MK60DN10_dac.pbi
@@ -22,6 +16,14 @@ G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Deb
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\MK60DN10_systick.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\MK60DN10_uart.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\MK60DN10_wdog.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\ANO_DT.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\beep.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\data.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\douji.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\gy273.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\road.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\speed.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\ultrasonic.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\SEEKFREE_18TFT.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\SEEKFREE_7725.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\SEEKFREE_FUN.pbi
@@ -33,5 +35,6 @@ G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Deb
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\SEEKFREE_NRF24L01.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\SEEKFREE_OLED.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\SEEKFREE_TSL1401.pbi
-G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\speed.pbi
 G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\system_MK60D10.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\isr.pbi
+G:\12届智能车\软件部分\小车主板\zhufei\Projecct\IAR\program\MK60_Debug\Obj\main.pbi
